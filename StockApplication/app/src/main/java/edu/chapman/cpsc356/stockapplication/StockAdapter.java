@@ -16,17 +16,17 @@ import java.util.List;
  * Created by ryanburns on 12/4/16.
  */
 
-public class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder>
+public abstract class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder>
 {
-    private Activity activity;
+    protected Activity activity;
     private List<String> items;
-    private boolean clickable;
 
-    public StockAdapter(List<String> stocks, boolean clickable, Activity activity)
+    protected abstract void onClickItem(String item);
+
+    public StockAdapter(List<String> stocks, Activity activity)
     {
         this.items = stocks;
         this.activity = activity;
-        this.clickable = true;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHol
     public void onBindViewHolder(StockViewHolder holder, int position)
     {
         String item = this.items.get(position);
-        holder.initialize(item, clickable);
+        holder.initialize(item);
     }
 
     @Override
@@ -60,38 +60,19 @@ public class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHol
             super(itemView);
 
             this.textView = (TextView) itemView;
+            this.textView.setOnClickListener(this);
         }
 
-        public void initialize(String text, boolean clickable)
+        public void initialize(String text)
         {
             this.stockText = text;
             this.textView.setText(text);
-
-            if (clickable)
-            {
-                this.textView.setOnClickListener(this);
-            }
         }
 
         @Override
         public void onClick(View view)
         {
-            String message = activity.getString(R.string.are_you_sure_message, this.stockText);
-            new AlertDialog.Builder(activity)
-                    .setTitle(R.string.are_you_sure)
-                    .setMessage(message)
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener()
-                    {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i)
-                        {
-                            FavoriteStockCollection.Get().addFavoriteStock(stockText);
-                            activity.finish();
-                        }
-                    })
-                    .setNegativeButton(android.R.string.no, null)
-                    .create()
-                    .show();
+            onClickItem(this.stockText);
         }
     }
 }

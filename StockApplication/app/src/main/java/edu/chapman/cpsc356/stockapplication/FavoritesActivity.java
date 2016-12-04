@@ -41,7 +41,7 @@ public class FavoritesActivity extends AppCompatActivity
         if (this.favoriteStockListView.getAdapter() == null)
         {
             List<String> favoritesList = FavoriteStockCollection.Get().getFavoriteStocks();
-            this.favoriteStockListView.setAdapter(new StockAdapter(favoritesList, false, this));
+            this.favoriteStockListView.setAdapter(new FavoriteStockAdapter(favoritesList, this));
 
             this.favoriteStockListView.setLayoutManager(new LinearLayoutManager(this));
         }

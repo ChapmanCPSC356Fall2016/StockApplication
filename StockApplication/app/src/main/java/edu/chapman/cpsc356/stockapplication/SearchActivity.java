@@ -1,5 +1,7 @@
 package edu.chapman.cpsc356.stockapplication;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,9 +25,10 @@ public class SearchActivity extends AppCompatActivity
 
         this.stockSearchListView = (RecyclerView) findViewById(R.id.rv_search);
 
-        this.stockSearchListView.setAdapter(new StockAdapter(stockSearchResults, true, this));
+        this.stockSearchListView.setAdapter(new SearchStockAdapter(stockSearchResults, this));
 
         this.stockSearchListView.setLayoutManager(new LinearLayoutManager(this));
+
     }
 
     public void searchClicked(View view)
