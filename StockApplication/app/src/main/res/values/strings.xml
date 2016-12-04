@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">StockApplication</string>
+    <string name="action_settings">Settings</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="are_you_sure_message" formatted="false">Are you sure you want to add %s to your favorites?</string>
+    <string name="search">Search</string>
+    <string name="enter_symbol_here">Enter symbol here</string>
+</resources>
