@@ -1,7 +1,5 @@
-package edu.chapman.cpsc356.stockapplication;
+package edu.chapman.cpsc356.stockapplication.activities;
 
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +8,9 @@ import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import edu.chapman.cpsc356.stockapplication.R;
+import edu.chapman.cpsc356.stockapplication.adapters.SearchStockAdapter;
 
 public class SearchActivity extends AppCompatActivity
 {

@@ -1,4 +1,4 @@
-package edu.chapman.cpsc356.stockapplication;
+package edu.chapman.cpsc356.stockapplication.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import java.util.List;
+
+import edu.chapman.cpsc356.stockapplication.adapters.FavoriteStockAdapter;
+import edu.chapman.cpsc356.stockapplication.FavoriteStockCollection;
+import edu.chapman.cpsc356.stockapplication.R;
 
 public class FavoritesActivity extends AppCompatActivity
 {

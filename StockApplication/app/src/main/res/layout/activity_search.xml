@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="edu.chapman.cpsc356.stockapplication.SearchActivity">
+    tools:context="edu.chapman.cpsc356.stockapplication.activities.SearchActivity">
 
     <LinearLayout
         android:id="@+id/ll_search"
