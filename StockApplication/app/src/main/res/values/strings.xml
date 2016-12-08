@@ -5,4 +5,8 @@
     <string name="are_you_sure_message" formatted="false">Are you sure you want to add %s to your favorites?</string>
     <string name="search">Search</string>
     <string name="enter_symbol_here">Enter symbol here</string>
+    <string name="symbol">Symbol</string>
+    <string name="name">Name</string>
+    <string name="price">Price</string>
+    <string name="change_percent">Change Percent</string>
 </resources>

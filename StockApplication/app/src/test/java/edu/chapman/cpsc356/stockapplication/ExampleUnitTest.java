@@ -1,9 +1,13 @@
 package edu.chapman.cpsc356.stockapplication;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.junit.Test;
 
+import java.util.List;
+
+import edu.chapman.cpsc356.stockapplication.models.StockDetailItem;
 import edu.chapman.cpsc356.stockapplication.models.StockItem;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -46,9 +50,13 @@ public class ExampleUnitTest
 
         String json = res.body().string();
 
+        List<StockItem> items = new Gson().fromJson(json, new TypeToken<List<StockItem>>(){}.getType());
+
         // stupid test stuff
-        assertNotNull(json);
-        assertNotEquals(json, "");
+        assertNotNull(items);
+        assertNotEquals(items.size(), 0);
+
+        System.out.println(json);
     }
 
     @Test
@@ -73,10 +81,12 @@ public class ExampleUnitTest
 
         String json = res.body().string();
 
-        StockItem item = new Gson().fromJson(json, StockItem.class);
+        StockDetailItem item = new Gson().fromJson(json, StockDetailItem.class);
 
         // stupid test stuff
         assertNotNull(item);
         assertNotEquals(item.name, "");
+
+        System.out.println(json);
     }
 }

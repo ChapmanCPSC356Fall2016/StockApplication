@@ -1,8 +1,11 @@
 package edu.chapman.cpsc356.stockapplication.adapters;
 
 import android.app.Activity;
+import android.content.Intent;
 
 import java.util.List;
+
+import edu.chapman.cpsc356.stockapplication.activities.StockActivity;
 
 public class FavoriteStockAdapter extends StockAdapter
 {
@@ -14,6 +17,9 @@ public class FavoriteStockAdapter extends StockAdapter
     @Override
     protected void onClickItem(final String item)
     {
-        // TODO: nothing yet
+        Intent stockIntent = new Intent(activity, StockActivity.class);
+        stockIntent.putExtra(StockActivity.EXTRA_SYMBOL, item);
+
+        activity.startActivity(stockIntent);
     }
 }

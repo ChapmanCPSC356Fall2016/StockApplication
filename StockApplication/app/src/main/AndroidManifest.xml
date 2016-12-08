@@ -2,6 +2,8 @@
 <manifest package="edu.chapman.cpsc356.stockapplication"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SearchActivity" android:parentActivityName=".activities.SearchActivity">
+        <activity
+            android:name=".activities.SearchActivity"
+            android:parentActivityName=".activities.SearchActivity">
+        </activity>
+        <activity android:name=".activities.StockActivity" android:parentActivityName=".activities.FavoritesActivity">
         </activity>
     </application>
 
